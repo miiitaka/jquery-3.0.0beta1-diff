@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.0.0-alpha1.js"></script>
+</head>
+<body>
+
+<button id="test1" data-foo-bar="bar">data属性（数字なし）</button>
+<button id="test2" data-foo-420="420">data属性（数字あり）</button>
+
+<script>
+  (function($){
+    $(function(){
+      $("#test1").on("click", function(){
+        console.log($(this).data("foo-bar"));
+        console.log($(this).data("fooBar"));
+      });
+      $("#test2").on("click", function(){
+        console.log($(this).data("foo-420"));
+        console.log($(this).data("foo420"));
+      });
+    });
+  })(jQuery)
+</script>
+</body>
+</html>

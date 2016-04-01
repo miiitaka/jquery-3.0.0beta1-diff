@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.0.0-beta1.js"></script>
+</head>
+<body>
+
+<script>
+  (function($){
+    $(function(){
+      $(window).on("load", function() {
+        console.log("loadイベント(on)");
+      });
+      $(window).load(function() {
+        console.log("loadイベント(Alias)");
+      });
+    });
+  })(jQuery)
+</script>
+</body>
+</html>

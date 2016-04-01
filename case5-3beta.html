@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.0.0-beta1.js"></script>
+</head>
+<body>
+
+<button id="test1" data-foo-bar="bar">jQuery.Deferred</button>
+
+<script>
+  (function($){
+    $(function(){
+      $("#test1").on("click", function() {
+        var parent = $.Deferred();
+        var child = parent.then( null, function() {
+          return "bar;"
+        });
+      });
+    });
+  })(jQuery)
+</script>
+</body>
+</html>

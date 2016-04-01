@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.0.0-beta1.js"></script>
+</head>
+<body>
+
+<div id="test0">
+  <p id="test1"><a>wrap1</a></p>
+  <p id="test2"><a>wrap2</a></p>
+  <p id="test3"><a>wrap3</a></p>
+  <p id="test4"><a>wrap4</a></p>
+</div>
+
+<script>
+  (function($){
+    $(function(){
+      $("a").unwrap("#test3");
+    });
+  })(jQuery)
+</script>
+</body>
+</html>

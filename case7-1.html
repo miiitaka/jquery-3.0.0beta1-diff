@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+</head>
+<body>
+
+<p id="test1" style="background: #cccccc;width: 100.05px;">width()の例</p>
+
+<script>
+  (function($){
+    $(function(){
+      console.log($("#test1").width());
+    });
+  })(jQuery)
+</script>
+</body>
+</html>

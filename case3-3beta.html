@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.0.0-beta1.js"></script>
+</head>
+<body>
+
+<button id="test1" data-foo-bar="bar">jQuery.Deferred</button>
+
+<script>
+  (function($){
+    $(function(){
+      $("#test1").on("click", function() {
+        var parent = $.Deferred();
+        var child = parent.then( null, function() {
+          return "bar;"
+        });
+        var callback = function ( status ) {
+          return function( value ) {
+            console.log(status, value);
+            throw new Error( "baz" );
+          }
+        };
+        var grandchild = [
+          child.then( callback( "fulfilled" ), callback( "rejected" ) ),
+          child.then( callback( "fulfilled" ), callback( "rejected" ) )
+        ];
+        parent.reject( "foo" );
+        console.log( "parent resolved" );
+      });
+    });
+  })(jQuery)
+</script>
+</body>
+</html>

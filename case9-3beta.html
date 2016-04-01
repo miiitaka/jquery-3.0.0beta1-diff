@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.0.0-beta1.js"></script>
+</head>
+<body>
+
+<div id="test1" style="background: #cccccc;width: 100px;height: 100px;"></div>
+
+<script>
+  (function($){
+    $(function(){
+      //var requestAnimationFrame = $(window).requestAnimationFrame;
+
+      function move(timestamp) {
+        console.log(timestamp);
+        window.requestAnimationFrame(move);
+      }
+      move();
+    });
+  })(jQuery)
+</script>
+</body>
+</html>
